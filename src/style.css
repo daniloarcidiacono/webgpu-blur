@@ -1,0 +1,130 @@
+@layer reset, typography, layout, theme;
+
+@layer reset {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer typography {
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .footer-note {
+    text-align: center;
+  }
+}
+
+@layer layout {
+  :root {
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --min-image-width: 256px;
+  }
+
+  body {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-md);
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  button {
+    padding: 1px 6px;
+  }
+
+  .image-container {
+    --gap: var(--spacing-lg);
+
+    max-width: 1024px;
+    width: 100%;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+  }
+
+  .image-wrapper {
+    width: max(var(--min-image-width), calc(50% - var(--gap)));
+    min-width: var(--min-image-width);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+
+    will-change: transform;
+    contain: layout style paint;
+  }
+
+  canvas {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+
+  footer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .kernel-slider-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+}
+
+@layer theme {
+  :root {
+    color-scheme: light dark;
+    --color-surface-ground: #fff;
+    --color-border: #ccc;
+    --color-text: #666;
+    --color-text--emphasized: #000;
+
+    @media (prefers-color-scheme: dark) {
+      --color-surface-ground: #121212;
+      --color-border: #aaa;
+      --color-text: #999;
+      --color-text--emphasized: #ddd;
+    }
+  }
+
+  body {
+    background-color: var(--color-surface-ground);
+    color: var(--color-text);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text--emphasized);
+  }
+
+  canvas {
+    border: 1px solid var(--color-border);
+  }
+
+  input[type="file"] {
+    color: var(--color-text);
+  }
+
+  label, output {
+    color: var(--color-text--emphasized);
+  }
+
+  button, input[type="file"]::file-selector-button {
+    color: var(--color-text--emphasized);
+  }
+}

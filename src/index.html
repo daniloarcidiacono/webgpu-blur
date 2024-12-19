@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <title>Gaussian Blur in WebGPU</title>
+</head>
+<body>
+    <h1>Gaussian Blur in WebGPU</h1>
+
+    <header>
+        <input type="file" id="imageLoader" accept="image/*">
+        <button id="defaultImageBtn">Load Cat Image</button>
+    </header>
+
+    <main class="image-container">
+        <section class="image-wrapper">
+            <h3 id="originalCanvasTitle">Original Image</h3>
+            <canvas id="originalCanvas"></canvas>
+        </section>
+        <section class="image-wrapper">
+            <h3 id="blurredCanvasTitle">Blurred Image</h3>
+            <canvas id="blurredCanvas"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <div class="kernel-slider-container">
+            <label for="kernelRadiusSlider">Kernel Radius:</label>
+            <input type="range" id="kernelRadiusSlider" min="1" max="100" value="5">
+            <output id="kernelRadiusValue" for="kernelRadiusSlider">5</output>
+        </div>
+        <small class="footer-note">Cat image generated with DALL·E</small>
+    </footer>
+
+    <script type="module" src="./main.ts"></script>
+</body>
+</html>
