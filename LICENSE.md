@@ -1,5 +1,17 @@
 Copyright (c) 2025 Danilo Arcidiacono, https://github.com/daniloarcidiacono/webgpu-blur
 
+This project includes code from the "polynomial-regression" project, which is licensed under the MIT License.
+The code has been modified by Danilo Arcidiacono for use in this project.
+
+- Source: https://github.com/danielherrerohernando/polynomial-regression
+- Copyright (c) 2020 Daniel Herrero Hernando
+
+The MIT License applies to the above-mentioned code. See the file `polynomial-regression.ts` for the full text of the license.
+
+---
+
+The MIT License
+
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
 "Software"), to deal in the Software without restriction, including

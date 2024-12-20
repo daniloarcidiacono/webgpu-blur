@@ -10,27 +10,34 @@
     <h1>Gaussian Blur in WebGPU</h1>
 
     <header>
-        <input type="file" id="imageLoader" accept="image/*">
+        <button id="benchmarkBtn">Run Benchmark</button>
         <button id="defaultImageBtn">Load Cat Image</button>
-    </header>
+        <input type="file" id="imageLoader" accept="image/*">
 
-    <main class="image-container">
-        <section class="image-wrapper">
-            <h3 id="originalCanvasTitle">Original Image</h3>
-            <canvas id="originalCanvas"></canvas>
-        </section>
-        <section class="image-wrapper">
-            <h3 id="blurredCanvasTitle">Blurred Image</h3>
-            <canvas id="blurredCanvas"></canvas>
-        </section>
-    </main>
-
-    <footer>
         <div class="kernel-slider-container">
             <label for="kernelRadiusSlider">Kernel Radius:</label>
             <input type="range" id="kernelRadiusSlider" min="1" max="100" value="5">
             <output id="kernelRadiusValue" for="kernelRadiusSlider">5</output>
         </div>
+    </header>
+
+    <main class="image-container">
+        <section class="image-wrapper">
+            <h3 id="originalCanvasTitle">Original Image</h3>
+            <canvas id="originalCanvas" class="image-canvas"></canvas>
+        </section>
+        <section class="image-wrapper">
+            <h3 id="blurredCanvasTitle">Blurred Image</h3>
+            <canvas id="blurredCanvas" class="image-canvas"></canvas>
+        </section>
+
+        <section class="image-wrapper">
+            <h3 id="blurBenchmarkTitle">Benchmark</h3>
+            <canvas id="benchmarkCanvas" class="image-canvas"></canvas>
+        </section>
+    </main>
+
+    <footer>
         <small class="footer-note">Cat image generated with DALL·E</small>
     </footer>
 
