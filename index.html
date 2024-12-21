@@ -1,13 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WebGPU Testing</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+    <link rel="stylesheet" href="style.css" />
+    <title>Gaussian Blur in WebGPU</title>
+</head>
+<body>
+    <h1>Gaussian Blur in WebGPU</h1>
+
+    <header>
+        <button id="benchmarkBtn">Run Benchmark</button>
+        <button id="defaultImageBtn">Load Cat Image</button>
+        <input type="file" id="imageLoader" accept="image/*">
+
+        <div class="kernel-slider-container">
+            <label for="kernelRadiusSlider">Kernel Radius:</label>
+            <input type="range" id="kernelRadiusSlider" min="1" max="100" value="5">
+            <output id="kernelRadiusValue" for="kernelRadiusSlider">5</output>
+        </div>
+    </header>
+
+    <main class="image-container">
+        <section class="image-wrapper">
+            <h3 id="originalCanvasTitle">Original Image</h3>
+            <canvas id="originalCanvas" class="image-canvas"></canvas>
+        </section>
+        <section class="image-wrapper">
+            <h3 id="blurredCanvasTitle">Blurred Image</h3>
+            <canvas id="blurredCanvas" class="image-canvas"></canvas>
+        </section>
+
+        <section class="image-wrapper">
+            <h3 id="blurBenchmarkTitle">Benchmark</h3>
+            <canvas id="benchmarkCanvas" class="image-canvas"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <small class="footer-note">Cat image generated with DALL·E</small>
+    </footer>
+
+    <script type="module" src="src/main.ts"></script>
+</body>
 </html>
