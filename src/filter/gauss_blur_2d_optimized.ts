@@ -11,7 +11,7 @@ export class Gauss2dBlurOptimized {
   static async create(device: GPUDevice, inputFormat: GPUTextureFormat, timer?: GPUTimer) {
     const inputInfo = TEXTURE_FORMAT_INFO[inputFormat]!;
 
-    // Create uniform buffer for variance
+    // Create uniform buffer for kernel size and blur direction
     const uniformBuffer = device.createBuffer({
       size: 8,
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST
