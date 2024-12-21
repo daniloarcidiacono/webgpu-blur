@@ -75,7 +75,7 @@ module("Gaussian Blur 2D", hooks => {
       0,	0,	0,	0,	0
     ]);
 
-    await basicBlur(assert, "r32float", inputData, expectedData, 1, 0);
+    await basicBlur(assert, "r32float", inputData, expectedData, 1, 1e-7);
   });
 
   test("horizontal edge", async (assert) => {
@@ -198,7 +198,6 @@ module("Gaussian Blur 2D", hooks => {
     kernelRadius: number,
     tolerance: number
   ) {
-    const TOLERANCE = 1;
     let inputTexture: GPUTexture | undefined;
     let blurredTexture: GPUTexture | undefined;
     let optimizedBlurredTexture: GPUTexture | undefined;
@@ -239,7 +238,7 @@ module("Gaussian Blur 2D", hooks => {
         expectedData,
         5, 5,
         1,
-        TOLERANCE,
+        tolerance,
         `gauss2dBlur works (k = ${kernelRadius})`
       );
 
@@ -248,7 +247,7 @@ module("Gaussian Blur 2D", hooks => {
         expectedData,
         5, 5,
         1,
-        TOLERANCE,
+        tolerance,
         `gauss2dBlurOptimized works (k = ${kernelRadius})`
       );
 
