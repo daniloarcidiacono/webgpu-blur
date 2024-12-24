@@ -36,6 +36,9 @@ importers:
       vite:
         specifier: ^6.0.1
         version: 6.0.3(@types/node@22.10.2)
+      vite-plugin-dts-bundle-generator:
+        specifier: ^2.0.6
+        version: 2.0.6(vite@6.0.3(@types/node@22.10.2))
       vite-tsconfig-paths:
         specifier: ^5.1.4
         version: 5.1.4(typescript@5.6.3)(vite@6.0.3(@types/node@22.10.2))
@@ -777,6 +780,11 @@ packages:
     resolution: {integrity: sha512-EjePK1srD3P08o2j4f0ExnylqRs5B9tJjcp9t1krH2qRi8CCdsYfwe9JgSLurFBWwq4uOlipzfk5fHNvwFKr8Q==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
+  dts-bundle-generator@9.5.1:
+    resolution: {integrity: sha512-DxpJOb2FNnEyOzMkG11sxO2dmxPjthoVWxfKqWYJ/bI/rT1rvTMktF5EKjAYrRZu6Z6t3NhOUZ0sZ5ZXevOfbA==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+
   ejs@3.1.10:
     resolution: {integrity: sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==}
     engines: {node: '>=0.10.0'}
@@ -1458,6 +1466,11 @@ packages:
   v8-to-istanbul@9.3.0:
     resolution: {integrity: sha512-kiGUalWN+rgBJ/1OHZsBtU4rXZOfj/7rKQxULKlIzwzQSvMJUUNgPwJEEh7gU6xEVxC0ahoOBvN2YI8GH6FNgA==}
     engines: {node: '>=10.12.0'}
+
+  vite-plugin-dts-bundle-generator@2.0.6:
+    resolution: {integrity: sha512-/Vf9FTCY7/fx8Oycui+SSE/+YnvyE2zVW6hEjCiVfgYr4rziosAaWlo7URNIPR7YL54kMInw+sSuVzL8BRrjDg==}
+    peerDependencies:
+      vite: ^5.0.12 || ^6.0.0
 
   vite-tsconfig-paths@5.1.4:
     resolution: {integrity: sha512-cYj0LRuLV2c2sMqhqhGpaO3LretdtMn/BVX4cPLanIZuwwrkVl+lK84E/miEXkCHWXuq65rhNN4rXsBcOB3S4w==}
@@ -2315,6 +2328,11 @@ snapshots:
 
   diff-sequences@29.6.3: {}
 
+  dts-bundle-generator@9.5.1:
+    dependencies:
+      typescript: 5.6.3
+      yargs: 17.7.2
+
   ejs@3.1.10:
     dependencies:
       jake: 10.9.2
@@ -3141,6 +3159,11 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.25
       '@types/istanbul-lib-coverage': 2.0.6
       convert-source-map: 2.0.0
+
+  vite-plugin-dts-bundle-generator@2.0.6(vite@6.0.3(@types/node@22.10.2)):
+    dependencies:
+      dts-bundle-generator: 9.5.1
+      vite: 6.0.3(@types/node@22.10.2)
 
   vite-tsconfig-paths@5.1.4(typescript@5.6.3)(vite@6.0.3(@types/node@22.10.2)):
     dependencies:

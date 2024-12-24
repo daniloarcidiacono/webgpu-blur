@@ -1,9 +1,20 @@
 {
-  "name": "webgpu-blur",
-  "private": true,
+  "name": "@daniloarcidiacono/webgpu-blur",
   "version": "0.1.0",
   "description": "Gaussian Blur in WebGPU",
   "type": "module",
+  "sideEffects": false,
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports":  {
+    ".": "./lib/index.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/daniloarcidiacono/webgpu-blur.git"
@@ -21,9 +32,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:library": "tsc && vite build --config vite.config.library.ts",
     "preview": "vite preview",
     "test:node": "jest --config test/node/jest.config.js",
-    "test:browser": "vite --config test/browser/vite.config.ts"
+    "test:browser": "vite --config test/browser/vite.config.ts",
+    "prepublishOnly": "pnpm run build:library",
+    "republish": "pnpm unpublish --force & pnpm publish --no-git-checks"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
@@ -34,6 +48,7 @@
     "ts-jest": "^29.2.5",
     "typescript": "~5.6.2",
     "vite": "^6.0.1",
+    "vite-plugin-dts-bundle-generator": "^2.0.6",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "dependencies": {
