@@ -2,7 +2,7 @@
 
 This repository showcases a 2D Gaussian Blur filter implemented using WebGPU, leveraging the power of modern GPUs for efficient image processing.
 
-For a detailed explanation of the implementation, check out the blog post: [2D Gaussian Blur in WebGPU](https://danilosdev.blog/posts/webgpu-blur).
+For a detailed explanation of the implementation, check out the blog series: [Gaussian Blur](https://www.danilosdev.blog/it/blog/webgpu-blur).
 
 ## Prerequisites
 
